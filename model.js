@@ -50,14 +50,25 @@ class Model {
                 editInput += input[i]
             }
         }
-        console.log(editInput)
+        
         data.push(new Model(data[data.length-1].id+1, editInput))
         //butuh method save
         Model.save(JSON.stringify(data, null, 2))
+        return editInput
     }
 
     static save(data) {
         fs.writeFileSync('./data.json', data)
+    }
+
+    static findById (input) {
+        let data = Model.parseData()
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].id == input) {
+                return data[i]
+            }
+        }
+        return 'Data not found'
     }
 }
 

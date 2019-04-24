@@ -9,6 +9,11 @@ class View {
             console.log(text)
         });
     }
+
+    static findById(e) {
+        let text = `${e.id}. ${e.task}`
+        console.log(text)
+    }
 }
 
 module.exports = View

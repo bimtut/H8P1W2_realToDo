@@ -13,8 +13,18 @@ class Controller {
     }
 
     static add (input) {
-        Model.add(input)
+        let dataInput = Model.add(input)
+        View.success(`${dataInput} << sudah berhasil dimasukkan`)
         Controller.list()
+    }
+
+    static findById(id) {
+        let data = Model.findById(id)
+        if (data.length == undefined) {
+            View.findById(data)
+        } else {
+            View.success(data)
+        }
     }
 }
 

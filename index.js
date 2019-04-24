@@ -9,4 +9,6 @@ if (command === 'help' || command == undefined) {
     Controller.list()
 } else if (command == 'add') {
     Controller.add(input)
+} else if (command === 'findById') {
+    Controller.findById(input)
 }

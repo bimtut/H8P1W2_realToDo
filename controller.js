@@ -6,6 +6,11 @@ class Controller {
         let input = Model.help()
         View.success(input)
     }
+
+    static list() {
+        let input =  Model.list()
+        View.list(input)
+    }
 }
 
 module.exports = Controller

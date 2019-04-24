@@ -5,4 +5,6 @@ const Controller = require('./controller')
 
 if (command === 'help' || command == undefined) {
     Controller.help()
+} else if (command === 'list') {
+    Controller.list()
 }

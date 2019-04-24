@@ -5,7 +5,8 @@ class View {
     }
     static list (data) {
         data.forEach(e => {
-            console.log(e)
+            let text = `${e.id}. ${e.task}`
+            console.log(text)
         });
     }
 }

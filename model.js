@@ -19,7 +19,7 @@ class Model {
     }
 
     static list () {//membutuhkan readData dan parseData dulu agar supaya data json nya jadi string di sini
-        let data = Model.pdatarseData()
+        let data = Model.parseData()
         return data
     }
 

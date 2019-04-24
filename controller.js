@@ -11,6 +11,11 @@ class Controller {
         let input =  Model.list()
         View.list(input)
     }
+
+    static add (input) {
+        Model.add(input)
+        Controller.list()
+    }
 }
 
 module.exports = Controller

@@ -7,4 +7,6 @@ if (command === 'help' || command == undefined) {
     Controller.help()
 } else if (command === 'list') {
     Controller.list()
+} else if (command == 'add') {
+    Controller.add(input)
 }

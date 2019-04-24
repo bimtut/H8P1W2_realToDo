@@ -1,3 +1,4 @@
+const fs = require('fs')
 
 class Model {
     constructor(id, task) {
@@ -24,7 +25,6 @@ class Model {
     }
 
     static readData() {
-        const fs = require('fs')
         let data = fs.readFileSync('./data.json', 'utf8')
         return data
     }
@@ -35,6 +35,29 @@ class Model {
             data[i] = new Model(data[i].id, data[i].task)
         }
         return data
+    }
+
+    static add (input) {
+        let data = Model.parseData()
+        let editInput = ''
+        // input.forEach(e => {
+        //     editInput += e + ' '
+        // });
+        for (let i = 0; i < input.length; i++) {
+            if (i != input.length-1) {
+                editInput += input[i] + ' '
+            } else {
+                editInput += input[i]
+            }
+        }
+        console.log(editInput)
+        data.push(new Model(data[data.length-1].id+1, editInput))
+        //butuh method save
+        Model.save(JSON.stringify(data, null, 2))
+    }
+
+    static save(data) {
+        fs.writeFileSync('./data.json', data)
     }
 }
 
